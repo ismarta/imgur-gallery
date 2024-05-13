@@ -21,6 +21,8 @@
 		3F7CC96F2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC96E2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift */; };
 		3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9702BF20FF8000C2C1B /* UserDefaultManager.swift */; };
 		3F7CC9732BF21326000C2C1B /* AccessTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */; };
+		3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9752BF222F1000C2C1B /* GetAccessToken.swift */; };
+		3F7CC9782BF222FD000C2C1B /* SaveAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9772BF222FD000C2C1B /* SaveAccessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		3F7CC96E2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenLocalDataSource.swift; sourceTree = "<group>"; };
 		3F7CC9702BF20FF8000C2C1B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRepositoryTests.swift; sourceTree = "<group>"; };
+		3F7CC9752BF222F1000C2C1B /* GetAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessToken.swift; sourceTree = "<group>"; };
+		3F7CC9772BF222FD000C2C1B /* SaveAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAccessToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +151,7 @@
 		3F7CC9622BF20B51000C2C1B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				3F7CC96C2BF20DC6000C2C1B /* AccessTokenRepository.swift */,
+				3F7CC9742BF222DC000C2C1B /* AccessToken */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -178,6 +182,16 @@
 				3F7CC9662BF20BED000C2C1B /* AccessToken.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3F7CC9742BF222DC000C2C1B /* AccessToken */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC96C2BF20DC6000C2C1B /* AccessTokenRepository.swift */,
+				3F7CC9752BF222F1000C2C1B /* GetAccessToken.swift */,
+				3F7CC9772BF222FD000C2C1B /* SaveAccessToken.swift */,
+			);
+			path = AccessToken;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +328,8 @@
 				3F7CC93B2BF203B6000C2C1B /* ContentView.swift in Sources */,
 				3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */,
 				3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */,
+				3F7CC9782BF222FD000C2C1B /* SaveAccessToken.swift in Sources */,
+				3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */,
 				3F7CC9672BF20BED000C2C1B /* AccessToken.swift in Sources */,
 				3F7CC96D2BF20DC6000C2C1B /* AccessTokenRepository.swift in Sources */,
 				3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */,
