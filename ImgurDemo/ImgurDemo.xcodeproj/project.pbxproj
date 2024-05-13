@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F200F012BF24AC5005F0A51 /* AUthorizationManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F002BF24AC5005F0A51 /* AUthorizationManagementTests.swift */; };
 		3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */; };
 		3F7CC93D2BF203B8000C2C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */; };
 		3F7CC9402BF203B8000C2C1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93F2BF203B8000C2C1B /* Preview Assets.xcassets */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		3F200EFF2BF24745005F0A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3F200F002BF24AC5005F0A51 /* AUthorizationManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUthorizationManagementTests.swift; sourceTree = "<group>"; };
 		3F7CC9352BF203B6000C2C1B /* ImgurDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoApp.swift; sourceTree = "<group>"; };
 		3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				3F7CC9492BF203B8000C2C1B /* ImgurDemoTests.swift */,
 				3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */,
+				3F200F002BF24AC5005F0A51 /* AUthorizationManagementTests.swift */,
 			);
 			path = ImgurDemoTests;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F200F012BF24AC5005F0A51 /* AUthorizationManagementTests.swift in Sources */,
 				3F7CC9732BF21326000C2C1B /* AccessTokenRepositoryTests.swift in Sources */,
 				3F7CC94A2BF203B8000C2C1B /* ImgurDemoTests.swift in Sources */,
 			);
