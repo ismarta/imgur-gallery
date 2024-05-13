@@ -14,6 +14,13 @@
 		3F7CC94A2BF203B8000C2C1B /* ImgurDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9492BF203B8000C2C1B /* ImgurDemoTests.swift */; };
 		3F7CC9542BF203B8000C2C1B /* ImgurDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9532BF203B8000C2C1B /* ImgurDemoUITests.swift */; };
 		3F7CC9562BF203B8000C2C1B /* ImgurDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9552BF203B8000C2C1B /* ImgurDemoUITestsLaunchTests.swift */; };
+		3F7CC9672BF20BED000C2C1B /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9662BF20BED000C2C1B /* AccessToken.swift */; };
+		3F7CC9692BF20CC9000C2C1B /* AccessTokenDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9682BF20CC9000C2C1B /* AccessTokenDataRepository.swift */; };
+		3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC96A2BF20D1E000C2C1B /* AccessTokenDataSource.swift */; };
+		3F7CC96D2BF20DC6000C2C1B /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC96C2BF20DC6000C2C1B /* AccessTokenRepository.swift */; };
+		3F7CC96F2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC96E2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift */; };
+		3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9702BF20FF8000C2C1B /* UserDefaultManager.swift */; };
+		3F7CC9732BF21326000C2C1B /* AccessTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		3F7CC94F2BF203B8000C2C1B /* ImgurDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7CC9532BF203B8000C2C1B /* ImgurDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoUITests.swift; sourceTree = "<group>"; };
 		3F7CC9552BF203B8000C2C1B /* ImgurDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F7CC9662BF20BED000C2C1B /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		3F7CC9682BF20CC9000C2C1B /* AccessTokenDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenDataRepository.swift; sourceTree = "<group>"; };
+		3F7CC96A2BF20D1E000C2C1B /* AccessTokenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenDataSource.swift; sourceTree = "<group>"; };
+		3F7CC96C2BF20DC6000C2C1B /* AccessTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRepository.swift; sourceTree = "<group>"; };
+		3F7CC96E2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenLocalDataSource.swift; sourceTree = "<group>"; };
+		3F7CC9702BF20FF8000C2C1B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +88,8 @@
 		3F7CC92C2BF203B6000C2C1B = {
 			isa = PBXGroup;
 			children = (
+				3F7CC9632BF20B59000C2C1B /* Data */,
+				3F7CC9622BF20B51000C2C1B /* Domain */,
 				3F7CC9372BF203B6000C2C1B /* ImgurDemo */,
 				3F7CC9482BF203B8000C2C1B /* ImgurDemoTests */,
 				3F7CC9522BF203B8000C2C1B /* ImgurDemoUITests */,
@@ -114,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7CC9492BF203B8000C2C1B /* ImgurDemoTests.swift */,
+				3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */,
 			);
 			path = ImgurDemoTests;
 			sourceTree = "<group>";
@@ -125,6 +142,42 @@
 				3F7CC9552BF203B8000C2C1B /* ImgurDemoUITestsLaunchTests.swift */,
 			);
 			path = ImgurDemoUITests;
+			sourceTree = "<group>";
+		};
+		3F7CC9622BF20B51000C2C1B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC96C2BF20DC6000C2C1B /* AccessTokenRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3F7CC9632BF20B59000C2C1B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC9642BF20BCF000C2C1B /* AccessToken */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3F7CC9642BF20BCF000C2C1B /* AccessToken */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC9652BF20BD7000C2C1B /* Model */,
+				3F7CC9682BF20CC9000C2C1B /* AccessTokenDataRepository.swift */,
+				3F7CC96A2BF20D1E000C2C1B /* AccessTokenDataSource.swift */,
+				3F7CC96E2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift */,
+				3F7CC9702BF20FF8000C2C1B /* UserDefaultManager.swift */,
+			);
+			path = AccessToken;
+			sourceTree = "<group>";
+		};
+		3F7CC9652BF20BD7000C2C1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC9662BF20BED000C2C1B /* AccessToken.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7CC96F2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift in Sources */,
 				3F7CC93B2BF203B6000C2C1B /* ContentView.swift in Sources */,
+				3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */,
 				3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */,
+				3F7CC9672BF20BED000C2C1B /* AccessToken.swift in Sources */,
+				3F7CC96D2BF20DC6000C2C1B /* AccessTokenRepository.swift in Sources */,
+				3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */,
+				3F7CC9692BF20CC9000C2C1B /* AccessTokenDataRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7CC9732BF21326000C2C1B /* AccessTokenRepositoryTests.swift in Sources */,
 				3F7CC94A2BF203B8000C2C1B /* ImgurDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
