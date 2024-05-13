@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */; };
-		3F7CC93B2BF203B6000C2C1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC93A2BF203B6000C2C1B /* ContentView.swift */; };
 		3F7CC93D2BF203B8000C2C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */; };
 		3F7CC9402BF203B8000C2C1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93F2BF203B8000C2C1B /* Preview Assets.xcassets */; };
 		3F7CC94A2BF203B8000C2C1B /* ImgurDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9492BF203B8000C2C1B /* ImgurDemoTests.swift */; };
@@ -23,6 +22,14 @@
 		3F7CC9732BF21326000C2C1B /* AccessTokenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */; };
 		3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9752BF222F1000C2C1B /* GetAccessToken.swift */; };
 		3F7CC9782BF222FD000C2C1B /* SaveAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9772BF222FD000C2C1B /* SaveAccessToken.swift */; };
+		3F7CC97A2BF2273C000C2C1B /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9792BF2273C000C2C1B /* InitialView.swift */; };
+		3F7CC97C2BF22788000C2C1B /* InitialViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC97B2BF22788000C2C1B /* InitialViewViewModel.swift */; };
+		3F7CC97E2BF22943000C2C1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC97D2BF22943000C2C1B /* LoginView.swift */; };
+		3F7CC9822BF22968000C2C1B /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9812BF22968000C2C1B /* GalleryView.swift */; };
+		3F7CC9842BF22AB9000C2C1B /* ApiDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9832BF22AB9000C2C1B /* ApiDetails.swift */; };
+		3F7CC9872BF22F06000C2C1B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9862BF22F06000C2C1B /* URL+extension.swift */; };
+		3F7CC9892BF23056000C2C1B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9882BF23056000C2C1B /* ErrorView.swift */; };
+		3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F200EFF2BF24745005F0A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3F7CC9352BF203B6000C2C1B /* ImgurDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoApp.swift; sourceTree = "<group>"; };
-		3F7CC93A2BF203B6000C2C1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F7CC93F2BF203B8000C2C1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F7CC9452BF203B8000C2C1B /* ImgurDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +69,14 @@
 		3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRepositoryTests.swift; sourceTree = "<group>"; };
 		3F7CC9752BF222F1000C2C1B /* GetAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessToken.swift; sourceTree = "<group>"; };
 		3F7CC9772BF222FD000C2C1B /* SaveAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAccessToken.swift; sourceTree = "<group>"; };
+		3F7CC9792BF2273C000C2C1B /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		3F7CC97B2BF22788000C2C1B /* InitialViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewViewModel.swift; sourceTree = "<group>"; };
+		3F7CC97D2BF22943000C2C1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3F7CC9812BF22968000C2C1B /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		3F7CC9832BF22AB9000C2C1B /* ApiDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDetails.swift; sourceTree = "<group>"; };
+		3F7CC9862BF22F06000C2C1B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
+		3F7CC9882BF23056000C2C1B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +129,14 @@
 		3F7CC9372BF203B6000C2C1B /* ImgurDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3F200EFF2BF24745005F0A51 /* Info.plist */,
+				3F7CC98A2BF23089000C2C1B /* Views */,
+				3F7CC9852BF22EF3000C2C1B /* Commons */,
 				3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */,
-				3F7CC93A2BF203B6000C2C1B /* ContentView.swift */,
 				3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */,
 				3F7CC93E2BF203B8000C2C1B /* Preview Content */,
+				3F7CC97B2BF22788000C2C1B /* InitialViewViewModel.swift */,
+				3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */,
 			);
 			path = ImgurDemo;
 			sourceTree = "<group>";
@@ -160,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7CC9642BF20BCF000C2C1B /* AccessToken */,
+				3F7CC9832BF22AB9000C2C1B /* ApiDetails.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -192,6 +212,25 @@
 				3F7CC9772BF222FD000C2C1B /* SaveAccessToken.swift */,
 			);
 			path = AccessToken;
+			sourceTree = "<group>";
+		};
+		3F7CC9852BF22EF3000C2C1B /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC9862BF22F06000C2C1B /* URL+extension.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3F7CC98A2BF23089000C2C1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CC9792BF2273C000C2C1B /* InitialView.swift */,
+				3F7CC9882BF23056000C2C1B /* ErrorView.swift */,
+				3F7CC97D2BF22943000C2C1B /* LoginView.swift */,
+				3F7CC9812BF22968000C2C1B /* GalleryView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,15 +363,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7CC97A2BF2273C000C2C1B /* InitialView.swift in Sources */,
 				3F7CC96F2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift in Sources */,
-				3F7CC93B2BF203B6000C2C1B /* ContentView.swift in Sources */,
 				3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */,
+				3F7CC9892BF23056000C2C1B /* ErrorView.swift in Sources */,
 				3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */,
+				3F7CC9842BF22AB9000C2C1B /* ApiDetails.swift in Sources */,
 				3F7CC9782BF222FD000C2C1B /* SaveAccessToken.swift in Sources */,
+				3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */,
 				3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */,
+				3F7CC9822BF22968000C2C1B /* GalleryView.swift in Sources */,
+				3F7CC9872BF22F06000C2C1B /* URL+extension.swift in Sources */,
 				3F7CC9672BF20BED000C2C1B /* AccessToken.swift in Sources */,
 				3F7CC96D2BF20DC6000C2C1B /* AccessTokenRepository.swift in Sources */,
 				3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */,
+				3F7CC97E2BF22943000C2C1B /* LoginView.swift in Sources */,
+				3F7CC97C2BF22788000C2C1B /* InitialViewViewModel.swift in Sources */,
 				3F7CC9692BF20CC9000C2C1B /* AccessTokenDataRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +546,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ImgurDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImgurDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -528,6 +575,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ImgurDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImgurDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

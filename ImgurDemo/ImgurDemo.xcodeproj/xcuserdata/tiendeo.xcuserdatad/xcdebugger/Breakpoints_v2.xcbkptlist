@@ -3,4 +3,68 @@
    uuid = "816C47EB-7BA5-47DF-8092-E9BBBD396367"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2B8F04D-4AD2-4463-A555-D127A7AC5441"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImgurDemo/InitialViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "generateAuthorizationURL()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87DBBFC3-3D31-4F61-946C-C10D8C9F9FFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImgurDemo/InitialViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "handleAuthorizationCallback(url:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "87DBBFC3-3D31-4F61-946C-C10D8C9F9FFC - 8d7cd55a72cff65a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImgurDemo.InitialViewViewModel.handleAuthorizationCallback(url: Foundation.URL) -&gt; ()"
+                  moduleName = "ImgurDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendeo/Documents/Dev/imgur-gallery/ImgurDemo/ImgurDemo/InitialViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59">
+               </Location>
+               <Location
+                  uuid = "87DBBFC3-3D31-4F61-946C-C10D8C9F9FFC - 8d7cd55a72cff65a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImgurDemo.InitialViewViewModel.handleAuthorizationCallback(url: Foundation.URL) -&gt; ()"
+                  moduleName = "ImgurDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendeo/Documents/Dev/imgur-gallery/ImgurDemo/ImgurDemo/InitialViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
