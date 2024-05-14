@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum StatusView: Equatable {
     case login
@@ -15,6 +16,7 @@ enum StatusView: Equatable {
 
 class InitialViewViewModel: ObservableObject {
     @Published var statusView: StatusView
+    @Published var images: [ImageEntity] = []
     let getAccessTokenUseCase: GetAccessToken
     let saveAccessTokenUseCase: SaveAccessToken
     let getImagesUseCase: GetImages
@@ -23,6 +25,7 @@ class InitialViewViewModel: ObservableObject {
     let authorizationErrorText = "Authorization Error"
     let errorTokenText = "Error saving AccesToken"
     let tryAgainText = "Try Again"
+    var cancellables: Set<AnyCancellable> = []
 
     init(getAccessTokenUseCase: GetAccessToken, saveAccessTokenUseCase: SaveAccessToken, getImagesUseCase: GetImages, uploadImageUseCase: UploadImage, accessToken: AccessToken? = nil) {
         self.getAccessTokenUseCase = getAccessTokenUseCase
@@ -35,12 +38,12 @@ class InitialViewViewModel: ObservableObject {
     }
 
     func loadView() {
-        existAccessToken(completion: { [weak self] result in
+        existAccessToken(completion: { result in
             switch result {
             case .success(_):
-                self?.statusView = .gallery
+                loadImages()
             case .failure(_):
-                self?.statusView = .login
+                loadLogin()
             }
         })
     }
@@ -87,5 +90,31 @@ class InitialViewViewModel: ObservableObject {
                 completion(.failure(error))
             }
         })
+    }
+
+    private func loadImages() {
+        guard let accessToken = accessToken else {
+            return loadLogin()
+        }
+        let publisher = getImagesUseCase.execute(accessToken: accessToken).receive(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("getImagesUseCase::success")
+            case .failure(let error):
+                print("getImagesUseCase::Error: \(error)")
+            }
+        }, receiveValue: {[weak self] images in
+            DispatchQueue.main.async {
+                self?.images = images
+                self?.statusView = .gallery
+            }
+        })
+        publisher.store(in: &cancellables)
+    }
+
+    private func loadLogin() {
+        statusView = .login
     }
 }
