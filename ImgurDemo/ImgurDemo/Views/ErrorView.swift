@@ -8,7 +8,31 @@
 import SwiftUI
 
 struct ErrorView: View {
+    let textMessage: String
+    let textButton: String?
+    @ObservedObject var viewModel: InitialViewViewModel
     var body: some View {
-        Text("ErrorView")
+        VStack() {
+            Image(systemName: "exclamationmark.triangle").resizable()
+                .foregroundColor(.black)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50)
+            Spacer().frame(height: 20)
+            Text(textMessage)
+                .font(.system(size: 17))
+                .foregroundColor(.black)
+            Spacer().frame(height: 20)
+            if let textButton = textButton {
+                Button(action: {
+                    viewModel.loadView()
+                }, label: {
+                    Text(textButton)
+                }).padding()
+                    .foregroundColor(.white)
+                    .background(.black)
+                    .cornerRadius(8)
+            }
+
+        }.padding()
     }
 }

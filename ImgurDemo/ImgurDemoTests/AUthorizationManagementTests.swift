@@ -61,8 +61,20 @@ final class AUthorizationManagementTests: XCTestCase {
         //WHEN
         initialViewViewModel.handleAuthorizationCallback(url: URL(string:urlMock)!)
         //THEN
-        XCTAssertEqual(initialViewViewModel.statusView, .error)
+        XCTAssertEqual(initialViewViewModel.statusView, .error(initialViewViewModel.authorizationErrorText, initialViewViewModel.tryAgainText))
     }
+
+    func testHandleAuthorizationWithErrorSavingToken() {
+        //GIVEN
+        let userDefault = UserDefaultWithErrorTokenMock()
+        let initialViewViewModel = getInitialViewViewModel(userDefault: userDefault)
+        let urlMock = "imgurdemo://oauth/callback?code=AUTHORIZATION_CODE&state=APPLICATION_STATE#access_token=myToken&expires_in=myExpiration&token_type=bearer&refresh_token=myRefreshToken&account_username=myUsername&account_id=acountId"
+        //WHEN
+        initialViewViewModel.handleAuthorizationCallback(url: URL(string:urlMock)!)
+        //THEN
+        XCTAssertEqual(initialViewViewModel.statusView, .error(initialViewViewModel.errorTokenText, initialViewViewModel.tryAgainText))
+    }
+
 
     private func getInitialViewViewModel(userDefault: UserDefaultProtocol) -> InitialViewViewModel {
         let accessTokenLocalDataSource = AccessTokenLocalDataSource(userDefaults: userDefault)

@@ -10,7 +10,7 @@ import Foundation
 enum StatusView: Equatable {
     case login
     case gallery
-    case error
+    case error(String, String?)
 }
 
 class InitialViewViewModel: ObservableObject {
@@ -18,6 +18,9 @@ class InitialViewViewModel: ObservableObject {
     let getAccessTokenUseCase: GetAccessToken
     let saveAccessTokenUseCase: SaveAccessToken
     var accessToken: AccessToken?
+    let authorizationErrorText = "Authorization Error"
+    let errorTokenText = "Error saving AccesToken"
+    let tryAgainText = "Try Again"
 
     init(getAccessTokenUseCase: GetAccessToken, saveAccessTokenUseCase: SaveAccessToken, accessToken: AccessToken? = nil) {
         self.getAccessTokenUseCase = getAccessTokenUseCase
@@ -57,7 +60,7 @@ class InitialViewViewModel: ObservableObject {
     
     func handleAuthorizationCallback(url: URL) {
         guard let accessToken = url.extractAccessToken() else {
-            statusView = .error
+            statusView = .error(authorizationErrorText, tryAgainText)
             return
         }
         saveAccessTokenUseCase.execute(accessToken: accessToken, completion: { result in
@@ -65,7 +68,7 @@ class InitialViewViewModel: ObservableObject {
             case .success(_):
                 statusView = .gallery
             case .failure(_):
-                statusView = .error
+                statusView = .error(errorTokenText, tryAgainText)
             }
         })
     }

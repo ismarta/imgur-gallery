@@ -16,8 +16,8 @@ struct InitialView: View {
                 GalleryView(viewModel: viewModel)
             case .login:
                 LoginView(viewModel: viewModel)
-            case .error:
-                ErrorView()
+            case .error(let textMessage, let textButton):
+                ErrorView(textMessage: textMessage, textButton: textButton, viewModel: viewModel)
         }
     }
 }

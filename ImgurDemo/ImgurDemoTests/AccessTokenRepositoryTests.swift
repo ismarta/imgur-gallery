@@ -43,7 +43,7 @@ final class AccessTokenRepositoryTests: XCTestCase {
     func testSaveAccessTokenFailure() {
         //GIVEN
         let accessTokenToBeSaved = MyAccessTokenMock().getAccessToken()
-        let userDefault = UserDefaultWithErrorTokenMock(accessToken: accessTokenToBeSaved)
+        let userDefault = UserDefaultWithErrorTokenMock()
         let localDataSource = AccessTokenLocalDataSource(userDefaults: userDefault)
         let accessTokenRepository = AccessTokenDataRepository(localDataSource: localDataSource)
         var resultValue: Bool? = nil
@@ -86,8 +86,7 @@ final class AccessTokenRepositoryTests: XCTestCase {
 
     func testGetAccessTokenFailure() {
         //GIVEN
-        let accessTokenSaved = MyAccessTokenMock().getAccessToken()
-        let userDefault = UserDefaultWithErrorTokenMock(accessToken: accessTokenSaved)
+        let userDefault = UserDefaultWithErrorTokenMock()
         let localDataSource = AccessTokenLocalDataSource(userDefaults: userDefault)
         let accessTokenRepository = AccessTokenDataRepository(localDataSource: localDataSource)
         var accessTokenResult: AccessToken? = nil
@@ -124,12 +123,6 @@ class UserDefaultWithSuccessTokenMock: UserDefaultProtocol {
 }
 
 class UserDefaultWithErrorTokenMock: UserDefaultProtocol {
-    let accessToken: AccessToken
-
-    init(accessToken: AccessToken) {
-        self.accessToken = accessToken
-    }
-
     func saveAccessToken(_ accessToken: AccessToken, completion: (Result<Bool, AuthenticationError>) -> Void) {
         return completion(.failure(.encoding))
     }
