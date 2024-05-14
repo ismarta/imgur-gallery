@@ -11,6 +11,15 @@
 		3F200F082BF358E1005F0A51 /* ImageDataRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */; };
 		3F200F0A2BF35903005F0A51 /* ImageRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F092BF35903005F0A51 /* ImageRemoteEntity.swift */; };
 		3F200F0C2BF3592D005F0A51 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F0B2BF3592D005F0A51 /* ImageEntity.swift */; };
+		3F200F0E2BF35DC4005F0A51 /* ImagesDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F0D2BF35DC4005F0A51 /* ImagesDataRepository.swift */; };
+		3F200F102BF35DE4005F0A51 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F0F2BF35DE4005F0A51 /* ImagesRepository.swift */; };
+		3F200F122BF35EAD005F0A51 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F112BF35EAD005F0A51 /* ServiceError.swift */; };
+		3F200F142BF35F15005F0A51 /* ImagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F132BF35F15005F0A51 /* ImagesDataSource.swift */; };
+		3F200F162BF35F4E005F0A51 /* ImagesRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F152BF35F4E005F0A51 /* ImagesRemoteDataSource.swift */; };
+		3F200F182BF3603B005F0A51 /* ImagesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F172BF3603B005F0A51 /* ImagesApi.swift */; };
+		3F200F1A2BF360C1005F0A51 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F192BF360C1005F0A51 /* MediaEntity.swift */; };
+		3F200F1C2BF36430005F0A51 /* RequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F1B2BF36430005F0A51 /* RequestPublisher.swift */; };
+		3F200F1E2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F1D2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift */; };
 		3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */; };
 		3F7CC93D2BF203B8000C2C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */; };
 		3F7CC9402BF203B8000C2C1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93F2BF203B8000C2C1B /* Preview Assets.xcassets */; };
@@ -59,6 +68,15 @@
 		3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataRemoteEntity.swift; sourceTree = "<group>"; };
 		3F200F092BF35903005F0A51 /* ImageRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRemoteEntity.swift; sourceTree = "<group>"; };
 		3F200F0B2BF3592D005F0A51 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		3F200F0D2BF35DC4005F0A51 /* ImagesDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataRepository.swift; sourceTree = "<group>"; };
+		3F200F0F2BF35DE4005F0A51 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
+		3F200F112BF35EAD005F0A51 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		3F200F132BF35F15005F0A51 /* ImagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataSource.swift; sourceTree = "<group>"; };
+		3F200F152BF35F4E005F0A51 /* ImagesRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRemoteDataSource.swift; sourceTree = "<group>"; };
+		3F200F172BF3603B005F0A51 /* ImagesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesApi.swift; sourceTree = "<group>"; };
+		3F200F192BF360C1005F0A51 /* MediaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
+		3F200F1B2BF36430005F0A51 /* RequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPublisher.swift; sourceTree = "<group>"; };
+		3F200F1D2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponseRemoteEntity.swift; sourceTree = "<group>"; };
 		3F7CC9352BF203B6000C2C1B /* ImgurDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoApp.swift; sourceTree = "<group>"; };
 		3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				3F200F062BF35862005F0A51 /* Model */,
+				3F200F0D2BF35DC4005F0A51 /* ImagesDataRepository.swift */,
+				3F200F132BF35F15005F0A51 /* ImagesDataSource.swift */,
+				3F200F152BF35F4E005F0A51 /* ImagesRemoteDataSource.swift */,
+				3F200F172BF3603B005F0A51 /* ImagesApi.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -123,6 +145,7 @@
 		3F200F032BF35813005F0A51 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F200F0F2BF35DE4005F0A51 /* ImagesRepository.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -133,6 +156,8 @@
 				3F200F0B2BF3592D005F0A51 /* ImageEntity.swift */,
 				3F200F092BF35903005F0A51 /* ImageRemoteEntity.swift */,
 				3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */,
+				3F200F192BF360C1005F0A51 /* MediaEntity.swift */,
+				3F200F1D2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +241,8 @@
 				3F200F022BF35809005F0A51 /* Images */,
 				3F7CC9642BF20BCF000C2C1B /* AccessToken */,
 				3F7CC9832BF22AB9000C2C1B /* ApiDetails.swift */,
+				3F200F112BF35EAD005F0A51 /* ServiceError.swift */,
+				3F200F1B2BF36430005F0A51 /* RequestPublisher.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -401,8 +428,13 @@
 			files = (
 				3F200F082BF358E1005F0A51 /* ImageDataRemoteEntity.swift in Sources */,
 				3F7CC97A2BF2273C000C2C1B /* InitialView.swift in Sources */,
+				3F200F142BF35F15005F0A51 /* ImagesDataSource.swift in Sources */,
 				3F7CC96F2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift in Sources */,
+				3F200F1E2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift in Sources */,
+				3F200F102BF35DE4005F0A51 /* ImagesRepository.swift in Sources */,
+				3F200F1A2BF360C1005F0A51 /* MediaEntity.swift in Sources */,
 				3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */,
+				3F200F182BF3603B005F0A51 /* ImagesApi.swift in Sources */,
 				3F7CC9892BF23056000C2C1B /* ErrorView.swift in Sources */,
 				3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */,
 				3F7CC9842BF22AB9000C2C1B /* ApiDetails.swift in Sources */,
@@ -410,8 +442,12 @@
 				3F200F0C2BF3592D005F0A51 /* ImageEntity.swift in Sources */,
 				3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */,
 				3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */,
+				3F200F162BF35F4E005F0A51 /* ImagesRemoteDataSource.swift in Sources */,
 				3F7CC9822BF22968000C2C1B /* GalleryView.swift in Sources */,
+				3F200F122BF35EAD005F0A51 /* ServiceError.swift in Sources */,
+				3F200F0E2BF35DC4005F0A51 /* ImagesDataRepository.swift in Sources */,
 				3F7CC9872BF22F06000C2C1B /* URL+extension.swift in Sources */,
+				3F200F1C2BF36430005F0A51 /* RequestPublisher.swift in Sources */,
 				3F7CC9672BF20BED000C2C1B /* AccessToken.swift in Sources */,
 				3F7CC96D2BF20DC6000C2C1B /* AccessTokenRepository.swift in Sources */,
 				3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */,

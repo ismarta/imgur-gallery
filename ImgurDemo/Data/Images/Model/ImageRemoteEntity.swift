@@ -13,3 +13,18 @@ struct ImageRemoteEntity: Codable {
     let description: String?
     let link: String?
 }
+
+extension ImageRemoteEntity {
+    func transformToDomain() -> ImageEntity? {
+        if let id = id, let link = link {
+            return ImageEntity(id: id, name: name, description: description, link: link)
+        } else {
+            return nil
+        }
+    }
+}
+extension Sequence where Iterator.Element == ImageRemoteEntity {
+    func transformToDomain() -> [ImageEntity] {
+        compactMap { $0.transformToDomain() }
+    }
+}
