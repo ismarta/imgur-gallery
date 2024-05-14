@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3F200F012BF24AC5005F0A51 /* AUthorizationManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F002BF24AC5005F0A51 /* AUthorizationManagementTests.swift */; };
+		3F200F082BF358E1005F0A51 /* ImageDataRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */; };
+		3F200F0A2BF35903005F0A51 /* ImageRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F092BF35903005F0A51 /* ImageRemoteEntity.swift */; };
+		3F200F0C2BF3592D005F0A51 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F0B2BF3592D005F0A51 /* ImageEntity.swift */; };
 		3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */; };
 		3F7CC93D2BF203B8000C2C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */; };
 		3F7CC9402BF203B8000C2C1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93F2BF203B8000C2C1B /* Preview Assets.xcassets */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		3F200EFF2BF24745005F0A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3F200F002BF24AC5005F0A51 /* AUthorizationManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUthorizationManagementTests.swift; sourceTree = "<group>"; };
+		3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataRemoteEntity.swift; sourceTree = "<group>"; };
+		3F200F092BF35903005F0A51 /* ImageRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRemoteEntity.swift; sourceTree = "<group>"; };
+		3F200F0B2BF3592D005F0A51 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
 		3F7CC9352BF203B6000C2C1B /* ImgurDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoApp.swift; sourceTree = "<group>"; };
 		3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +112,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F200F022BF35809005F0A51 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3F200F062BF35862005F0A51 /* Model */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		3F200F032BF35813005F0A51 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		3F200F062BF35862005F0A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F200F0B2BF3592D005F0A51 /* ImageEntity.swift */,
+				3F200F092BF35903005F0A51 /* ImageRemoteEntity.swift */,
+				3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3F7CC92C2BF203B6000C2C1B = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +204,7 @@
 		3F7CC9622BF20B51000C2C1B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				3F200F032BF35813005F0A51 /* Images */,
 				3F7CC9742BF222DC000C2C1B /* AccessToken */,
 			);
 			path = Domain;
@@ -181,6 +213,7 @@
 		3F7CC9632BF20B59000C2C1B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3F200F022BF35809005F0A51 /* Images */,
 				3F7CC9642BF20BCF000C2C1B /* AccessToken */,
 				3F7CC9832BF22AB9000C2C1B /* ApiDetails.swift */,
 			);
@@ -366,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F200F082BF358E1005F0A51 /* ImageDataRemoteEntity.swift in Sources */,
 				3F7CC97A2BF2273C000C2C1B /* InitialView.swift in Sources */,
 				3F7CC96F2BF20F8F000C2C1B /* AccessTokenLocalDataSource.swift in Sources */,
 				3F7CC9712BF20FF8000C2C1B /* UserDefaultManager.swift in Sources */,
@@ -373,6 +407,7 @@
 				3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */,
 				3F7CC9842BF22AB9000C2C1B /* ApiDetails.swift in Sources */,
 				3F7CC9782BF222FD000C2C1B /* SaveAccessToken.swift in Sources */,
+				3F200F0C2BF3592D005F0A51 /* ImageEntity.swift in Sources */,
 				3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */,
 				3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */,
 				3F7CC9822BF22968000C2C1B /* GalleryView.swift in Sources */,
@@ -382,6 +417,7 @@
 				3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */,
 				3F7CC97E2BF22943000C2C1B /* LoginView.swift in Sources */,
 				3F7CC97C2BF22788000C2C1B /* InitialViewViewModel.swift in Sources */,
+				3F200F0A2BF35903005F0A51 /* ImageRemoteEntity.swift in Sources */,
 				3F7CC9692BF20CC9000C2C1B /* AccessTokenDataRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
