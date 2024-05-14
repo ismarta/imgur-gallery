@@ -17,14 +17,18 @@ class InitialViewViewModel: ObservableObject {
     @Published var statusView: StatusView
     let getAccessTokenUseCase: GetAccessToken
     let saveAccessTokenUseCase: SaveAccessToken
+    let getImagesUseCase: GetImages
+    let uploadImageUseCase: UploadImage
     var accessToken: AccessToken?
     let authorizationErrorText = "Authorization Error"
     let errorTokenText = "Error saving AccesToken"
     let tryAgainText = "Try Again"
 
-    init(getAccessTokenUseCase: GetAccessToken, saveAccessTokenUseCase: SaveAccessToken, accessToken: AccessToken? = nil) {
+    init(getAccessTokenUseCase: GetAccessToken, saveAccessTokenUseCase: SaveAccessToken, getImagesUseCase: GetImages, uploadImageUseCase: UploadImage, accessToken: AccessToken? = nil) {
         self.getAccessTokenUseCase = getAccessTokenUseCase
         self.saveAccessTokenUseCase = saveAccessTokenUseCase
+        self.getImagesUseCase = getImagesUseCase
+        self.uploadImageUseCase = uploadImageUseCase
         self.accessToken = accessToken
         self.statusView = .login
         loadView()

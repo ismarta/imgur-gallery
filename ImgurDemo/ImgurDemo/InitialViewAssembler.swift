@@ -12,26 +12,41 @@ protocol InitialViewAssembler {
     func resolve() -> InitialViewViewModel
     func resolve() -> GetAccessToken
     func resolve() -> SaveAccessToken
+    func resolve() -> GetImages
+    func resolve() -> UploadImage
     func resolve() -> AccessTokenRepository
     func resolve() -> AccessTokenDataSource
+    func resolve() -> ImagesRepository
     func resolve() -> UserDefaultProtocol
 }
 
 extension InitialViewAssembler {
     func resolve() -> InitialView {
-        return InitialView(viewModel: resolve())
+        InitialView(viewModel: resolve())
     }
 
     func resolve() -> InitialViewViewModel {
-        return InitialViewViewModel(getAccessTokenUseCase: resolve(), saveAccessTokenUseCase: resolve())
+        InitialViewViewModel(getAccessTokenUseCase: resolve(), saveAccessTokenUseCase: resolve(), getImagesUseCase: resolve(), uploadImageUseCase: resolve())
     }
 
     func resolve() -> GetAccessToken {
-        return GetAccessToken(accessTokenRepository: resolve())
+        GetAccessToken(accessTokenRepository: resolve())
     }
 
     func resolve() -> SaveAccessToken {
-        return SaveAccessToken(accessTokenRepository: resolve())
+        SaveAccessToken(accessTokenRepository: resolve())
+    }
+
+    func resolve() -> GetImages {
+        GetImages(imagesRespository: resolve())
+    }
+
+    func resolve() -> UploadImage {
+        UploadImage(imageRepository: resolve())
+    }
+
+    func resolve() -> ImagesRepository {
+        ImagesDataRepository(remoteDataSource: ImagesRemoteDataSource())
     }
 
     func resolve() -> AccessTokenRepository {
