@@ -84,19 +84,3 @@ final class AUthorizationManagementTests: XCTestCase {
         return InitialViewViewModel(getAccessTokenUseCase: getAccessTokenUseCase, saveAccessTokenUseCase: saveAccessTokenUseCase)
     }
 }
-
-class UserDefaultKeyNotExistMock: UserDefaultProtocol {
-    let accessToken: AccessToken?
-
-    init(accessToken: AccessToken? = nil) {
-        self.accessToken = accessToken
-    }
-
-    func saveAccessToken(_ accessToken: AccessToken, completion: (Result<Bool, AuthenticationError>) -> Void) {
-        return completion(.failure(.encoding))
-    }
-
-    func getAccessToken(completion: (Result<AccessToken?, AuthenticationError>) -> Void) {
-        return completion(.failure(.keyNotExist))
-    }
-}

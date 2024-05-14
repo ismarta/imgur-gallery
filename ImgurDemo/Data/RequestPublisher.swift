@@ -47,7 +47,7 @@ class RequestPublisher: RequestableProtocol {
         return request
     }
 
-    func getData(fromURL request: URLRequest) -> AnyPublisher<Data, ServiceError> {
+    private func getData(fromURL request: URLRequest) -> AnyPublisher<Data, ServiceError> {
         return urlSession
             .dataTaskPublisher(for: request)
             .map {

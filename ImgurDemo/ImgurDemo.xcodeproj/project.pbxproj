@@ -20,6 +20,11 @@
 		3F200F1A2BF360C1005F0A51 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F192BF360C1005F0A51 /* MediaEntity.swift */; };
 		3F200F1C2BF36430005F0A51 /* RequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F1B2BF36430005F0A51 /* RequestPublisher.swift */; };
 		3F200F1E2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F1D2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift */; };
+		3F200F222BF3846C005F0A51 /* ImagesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F212BF3846C005F0A51 /* ImagesRepositoryTests.swift */; };
+		3F200F252BF39A84005F0A51 /* UserDefaultMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F242BF39A84005F0A51 /* UserDefaultMocks.swift */; };
+		3F200F272BF39ABE005F0A51 /* AccessTokenMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F262BF39ABE005F0A51 /* AccessTokenMock.swift */; };
+		3F200F292BF39B16005F0A51 /* ImageEntityMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F282BF39B16005F0A51 /* ImageEntityMock.swift */; };
+		3F200F2B2BF39B6C005F0A51 /* ImagesremoteDataSourceMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F200F2A2BF39B6C005F0A51 /* ImagesremoteDataSourceMocks.swift */; };
 		3F7CC9392BF203B6000C2C1B /* ImgurDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */; };
 		3F7CC93D2BF203B8000C2C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */; };
 		3F7CC9402BF203B8000C2C1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7CC93F2BF203B8000C2C1B /* Preview Assets.xcassets */; };
@@ -77,6 +82,11 @@
 		3F200F192BF360C1005F0A51 /* MediaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
 		3F200F1B2BF36430005F0A51 /* RequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPublisher.swift; sourceTree = "<group>"; };
 		3F200F1D2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponseRemoteEntity.swift; sourceTree = "<group>"; };
+		3F200F212BF3846C005F0A51 /* ImagesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepositoryTests.swift; sourceTree = "<group>"; };
+		3F200F242BF39A84005F0A51 /* UserDefaultMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultMocks.swift; sourceTree = "<group>"; };
+		3F200F262BF39ABE005F0A51 /* AccessTokenMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenMock.swift; sourceTree = "<group>"; };
+		3F200F282BF39B16005F0A51 /* ImageEntityMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntityMock.swift; sourceTree = "<group>"; };
+		3F200F2A2BF39B6C005F0A51 /* ImagesremoteDataSourceMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesremoteDataSourceMocks.swift; sourceTree = "<group>"; };
 		3F7CC9352BF203B6000C2C1B /* ImgurDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7CC9382BF203B6000C2C1B /* ImgurDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoApp.swift; sourceTree = "<group>"; };
 		3F7CC93C2BF203B8000C2C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +172,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3F200F232BF39A59005F0A51 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3F200F242BF39A84005F0A51 /* UserDefaultMocks.swift */,
+				3F200F262BF39ABE005F0A51 /* AccessTokenMock.swift */,
+				3F200F282BF39B16005F0A51 /* ImageEntityMock.swift */,
+				3F200F2A2BF39B6C005F0A51 /* ImagesremoteDataSourceMocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		3F7CC92C2BF203B6000C2C1B = {
 			isa = PBXGroup;
 			children = (
@@ -210,9 +231,11 @@
 		3F7CC9482BF203B8000C2C1B /* ImgurDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				3F200F232BF39A59005F0A51 /* Mocks */,
 				3F7CC9492BF203B8000C2C1B /* ImgurDemoTests.swift */,
 				3F7CC9722BF21326000C2C1B /* AccessTokenRepositoryTests.swift */,
 				3F200F002BF24AC5005F0A51 /* AUthorizationManagementTests.swift */,
+				3F200F212BF3846C005F0A51 /* ImagesRepositoryTests.swift */,
 			);
 			path = ImgurDemoTests;
 			sourceTree = "<group>";
@@ -463,8 +486,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F200F012BF24AC5005F0A51 /* AUthorizationManagementTests.swift in Sources */,
+				3F200F272BF39ABE005F0A51 /* AccessTokenMock.swift in Sources */,
+				3F200F2B2BF39B6C005F0A51 /* ImagesremoteDataSourceMocks.swift in Sources */,
+				3F200F252BF39A84005F0A51 /* UserDefaultMocks.swift in Sources */,
 				3F7CC9732BF21326000C2C1B /* AccessTokenRepositoryTests.swift in Sources */,
 				3F7CC94A2BF203B8000C2C1B /* ImgurDemoTests.swift in Sources */,
+				3F200F292BF39B16005F0A51 /* ImageEntityMock.swift in Sources */,
+				3F200F222BF3846C005F0A51 /* ImagesRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

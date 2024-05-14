@@ -106,34 +106,3 @@ final class AccessTokenRepositoryTests: XCTestCase {
     }
 }
 
-class UserDefaultWithSuccessTokenMock: UserDefaultProtocol {
-    let accessToken: AccessToken
-
-    init(accessToken: AccessToken) {
-        self.accessToken = accessToken
-    }
-
-    func saveAccessToken(_ accessToken: AccessToken, completion: (Result<Bool, AuthenticationError>) -> Void) {
-        return completion(.success(true))
-    }
-    
-    func getAccessToken(completion: (Result<AccessToken?, AuthenticationError>) -> Void) {
-        return completion(.success(accessToken))
-    }
-}
-
-class UserDefaultWithErrorTokenMock: UserDefaultProtocol {
-    func saveAccessToken(_ accessToken: AccessToken, completion: (Result<Bool, AuthenticationError>) -> Void) {
-        return completion(.failure(.encoding))
-    }
-
-    func getAccessToken(completion: (Result<AccessToken?, AuthenticationError>) -> Void) {
-        return completion(.failure(.decoding))
-    }
-}
-
-class MyAccessTokenMock {
-    func getAccessToken() -> AccessToken {
-        AccessToken(token: "MyToken", expiresIn: "expiration", userName: "MyUserName")
-    }
-}
