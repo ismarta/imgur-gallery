@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+enum PhotosSourceType {
+    case camera
+    case photoLibrary
+}
+
 struct GalleryView: View {
     @ObservedObject var viewModel: InitialViewViewModel
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
+    @State private var sourceType: PhotosSourceType = .photoLibrary
     var body: some View {
         VStack {
             if viewModel.images.isEmpty {
@@ -47,6 +53,7 @@ struct GalleryView: View {
             }
             HStack {
                 Button("Import Picture") {
+                    self.sourceType = .photoLibrary
                     self.showImagePicker.toggle()
                 }.padding()
                     .foregroundColor(.white)
@@ -54,6 +61,8 @@ struct GalleryView: View {
                     .cornerRadius(8)
                 
                 Button("Take Picture") {
+                    self.sourceType = .camera
+                    self.showImagePicker.toggle()
                 }.padding()
                     .foregroundColor(.white)
                     .background(Color.green)
@@ -63,11 +72,13 @@ struct GalleryView: View {
             .padding()
             .background(Color.white)
         }.sheet(isPresented: $showImagePicker) {
-            PickerView(selectedImage: $selectedImage)
+            PickerView(selectedImage: $selectedImage, sourceType: sourceType)
         }.onChange(of: selectedImage) { image in
             if let image = image {
                 viewModel.uploadImage(image: image)
             }
+        }.onChange(of: sourceType) { sourceType in
+            self.sourceType = sourceType
         }
     }
 }
