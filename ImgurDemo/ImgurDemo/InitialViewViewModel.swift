@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 enum StatusView: Equatable {
     case login
@@ -78,6 +79,35 @@ class InitialViewViewModel: ObservableObject {
                 statusView = .error(errorTokenText, tryAgainText)
             }
         })
+    }
+
+    func uploadImage(image: UIImage) {
+        guard let accessToken = accessToken else {
+            statusView = .error("AuthorizationError", "try again")
+            return
+        }
+        guard let data = image.jpegData(compressionQuality: 0.7) else {
+            return
+        }
+        let publisher = uploadImageUseCase.execute(accessToken: accessToken, mediaImage: MediaEntity(data: data, forKey: "image"))
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("uploadImageUseCase::success")
+            case .failure(let error):
+                print("uploadImageUseCase::Error: \(error)")
+            }
+        }, receiveValue: {[weak self] image in
+            guard let image = image else {
+                self?.statusView = .error("Upload Image Error", "try again")
+                return
+            }
+            DispatchQueue.main.async {
+                self?.images.insert(image, at: 0)
+            }
+        })
+        publisher.store(in: &cancellables)
     }
 
     private func existAccessToken(completion: (Result<Bool, AuthenticationError>) -> Void) {
