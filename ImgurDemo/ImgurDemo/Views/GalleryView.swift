@@ -64,10 +64,13 @@ struct GalleryView: View {
             .background(Color.white)
         }.sheet(isPresented: $showImagePicker) {
             PickerView(selectedImage: $selectedImage)
-        }.onChange(of: selectedImage) { oldValue, newValue in
-            if let image = newValue {
+        }.onChange(of: selectedImage) { image in
+            if let image = image {
                 viewModel.uploadImage(image: image)
             }
         }
     }
 }
+
+
+

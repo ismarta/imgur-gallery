@@ -74,7 +74,7 @@ class InitialViewViewModel: ObservableObject {
         saveAccessTokenUseCase.execute(accessToken: accessToken, completion: { result in
             switch result {
             case .success(_):
-                statusView = .gallery
+                loadImages()
             case .failure(_):
                 statusView = .error(errorTokenText, tryAgainText)
             }
