@@ -71,12 +71,14 @@ class InitialViewViewModel: ObservableObject {
             statusView = .error(authorizationErrorText, tryAgainText)
             return
         }
-        saveAccessTokenUseCase.execute(accessToken: accessToken, completion: { result in
+        saveAccessTokenUseCase.execute(accessToken: accessToken, completion: { [weak self] result in
+            guard let strongSelf = self else { return }
             switch result {
             case .success(_):
-                loadImages()
+                strongSelf.accessToken = accessToken
+                strongSelf.loadImages()
             case .failure(_):
-                statusView = .error(errorTokenText, tryAgainText)
+                strongSelf.statusView = .error(strongSelf.errorTokenText, strongSelf.tryAgainText)
             }
         })
     }
