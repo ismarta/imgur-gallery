@@ -33,7 +33,6 @@ class RequestPublisher: RequestableProtocol {
 
     private func getRequest(from url: URL, token: String, method: String = "GET", bodyParams: [String: String]?, mediaImage: [MediaEntity]?) -> URLRequest {
         var request = URLRequest(url: url)
-        request.cachePolicy = URLRequest.CachePolicy.returnCacheDataElseLoad
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "accept")
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
@@ -43,6 +42,8 @@ class RequestPublisher: RequestableProtocol {
             request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
             let dataBody = createDataBody(withParameters: bodyParams, media: mediaImage, boundary: boundary)
             request.httpBody = dataBody
+        } else {
+            request.cachePolicy = URLRequest.CachePolicy.returnCacheDataElseLoad
         }
         return request
     }
