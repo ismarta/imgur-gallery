@@ -31,11 +31,14 @@ final class AUthorizationManagementTests: XCTestCase {
     func testGalleryScreenWithToken() {
         //GIVEN
         let mockAccessToken = MyAccessTokenMock().getAccessToken()
+        let imagesRemoteDataSource = ImagesRemoteDataSourceSuccessMock(imagesResult: [ImageEntityMock(id: "4").givenAnImageentity()])
         let userDefault = UserDefaultWithSuccessTokenMock(accessToken: mockAccessToken)
-        let initialViewViewModel = getInitialViewViewModel(userDefault: userDefault)
+        let initialViewViewModel = getInitialViewViewModel(userDefault: userDefault, imagesDataSource: imagesRemoteDataSource)
+        let expectation = XCTestExpectation(description: "Asynchronous operation is expected to complete")
         //WHEN
         initialViewViewModel.loadView()
-        //THEN
+        XCTWaiter().wait(for: [expectation], timeout: 2.0)
+//        //THEN
         XCTAssertEqual(initialViewViewModel.statusView, .gallery)
         XCTAssertEqual(initialViewViewModel.accessToken, mockAccessToken)
     }
@@ -46,8 +49,10 @@ final class AUthorizationManagementTests: XCTestCase {
         let userDefault = UserDefaultWithSuccessTokenMock(accessToken: mockAccessToken)
         let initialViewViewModel = getInitialViewViewModel(userDefault: userDefault)
         let urlMock = "imgurdemo://oauth/callback?code=AUTHORIZATION_CODE&state=APPLICATION_STATE#access_token=myToken&expires_in=myExpiration&token_type=bearer&refresh_token=myRefreshToken&account_username=myUsername&account_id=acountId"
+        let expectation = XCTestExpectation(description: "Asynchronous operation is expected to complete")
         //WHEN
         initialViewViewModel.handleAuthorizationCallback(url: URL(string:urlMock)!)
+        XCTWaiter().wait(for: [expectation], timeout: 2.0)
         //THEN
         XCTAssertEqual(initialViewViewModel.statusView, .gallery)
     }
@@ -76,11 +81,15 @@ final class AUthorizationManagementTests: XCTestCase {
     }
 
 
-    private func getInitialViewViewModel(userDefault: UserDefaultProtocol) -> InitialViewViewModel {
+    private func getInitialViewViewModel(userDefault: UserDefaultProtocol, imagesDataSource: ImagesDataSource = ImagesRemoteDataSourceSuccessMock()) -> InitialViewViewModel {
         let accessTokenLocalDataSource = AccessTokenLocalDataSource(userDefaults: userDefault)
         let accessTokenRepository = AccessTokenDataRepository(localDataSource: accessTokenLocalDataSource)
         let getAccessTokenUseCase = GetAccessToken(accessTokenRepository: accessTokenRepository)
         let saveAccessTokenUseCase = SaveAccessToken(accessTokenRepository: accessTokenRepository)
-        return InitialViewViewModel(getAccessTokenUseCase: getAccessTokenUseCase, saveAccessTokenUseCase: saveAccessTokenUseCase)
+        let imagesRemoteDataSource = imagesDataSource
+        let imagesRepository = ImagesDataRepository(remoteDataSource: imagesRemoteDataSource)
+        let getImagesUseCase = GetImages(imagesRespository: imagesRepository)
+        let uploadImageUseCase = UploadImage(imageRepository: imagesRepository)
+        return InitialViewViewModel(getAccessTokenUseCase: getAccessTokenUseCase, saveAccessTokenUseCase: saveAccessTokenUseCase, getImagesUseCase: getImagesUseCase, uploadImageUseCase: uploadImageUseCase)
     }
 }
