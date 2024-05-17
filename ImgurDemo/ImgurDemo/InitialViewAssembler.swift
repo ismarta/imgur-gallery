@@ -14,6 +14,7 @@ protocol InitialViewAssembler {
     func resolve() -> SaveAccessToken
     func resolve() -> GetImages
     func resolve() -> UploadImage
+    func resolve() -> DeleteImage
     func resolve() -> AccessTokenRepository
     func resolve() -> AccessTokenDataSource
     func resolve() -> ImagesRepository
@@ -26,7 +27,7 @@ extension InitialViewAssembler {
     }
 
     func resolve() -> InitialViewViewModel {
-        InitialViewViewModel(getAccessTokenUseCase: resolve(), saveAccessTokenUseCase: resolve(), getImagesUseCase: resolve(), uploadImageUseCase: resolve())
+        InitialViewViewModel(getAccessTokenUseCase: resolve(), saveAccessTokenUseCase: resolve(), getImagesUseCase: resolve(), uploadImageUseCase: resolve(), deleteImageUseCase: resolve())
     }
 
     func resolve() -> GetAccessToken {
@@ -43,6 +44,10 @@ extension InitialViewAssembler {
 
     func resolve() -> UploadImage {
         UploadImage(imageRepository: resolve())
+    }
+
+    func resolve() -> DeleteImage {
+        DeleteImage(repository: resolve())
     }
 
     func resolve() -> ImagesRepository {

@@ -22,17 +22,19 @@ class InitialViewViewModel: ObservableObject {
     let saveAccessTokenUseCase: SaveAccessToken
     let getImagesUseCase: GetImages
     let uploadImageUseCase: UploadImage
+    let deleteImageUseCase: DeleteImage
     var accessToken: AccessToken?
     let authorizationErrorText = "Authorization Error"
     let errorTokenText = "Error saving AccesToken"
     let tryAgainText = "Try Again"
     var cancellables: Set<AnyCancellable> = []
 
-    init(getAccessTokenUseCase: GetAccessToken, saveAccessTokenUseCase: SaveAccessToken, getImagesUseCase: GetImages, uploadImageUseCase: UploadImage, accessToken: AccessToken? = nil) {
+    init(getAccessTokenUseCase: GetAccessToken, saveAccessTokenUseCase: SaveAccessToken, getImagesUseCase: GetImages, uploadImageUseCase: UploadImage, deleteImageUseCase: DeleteImage, accessToken: AccessToken? = nil) {
         self.getAccessTokenUseCase = getAccessTokenUseCase
         self.saveAccessTokenUseCase = saveAccessTokenUseCase
         self.getImagesUseCase = getImagesUseCase
         self.uploadImageUseCase = uploadImageUseCase
+        self.deleteImageUseCase = deleteImageUseCase
         self.accessToken = accessToken
         self.statusView = .login
         loadView()
@@ -110,6 +112,38 @@ class InitialViewViewModel: ObservableObject {
             }
         })
         publisher.store(in: &cancellables)
+    }
+
+    func deleteImage(imageId: String) {
+        guard let accessToken = accessToken else {
+            statusView = .error("AuthorizationError", "try again")
+            return
+        }
+        let publisher = deleteImageUseCase.execute(accessToken: accessToken, imageId: imageId)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("deleteImageUseCase::success")
+                case .failure(let error):
+                    print("deleteImageUseCase::Error: \(error)")
+                }
+            }, receiveValue: {[weak self] success in
+                guard let strongSelf = self else { return }
+                if success {
+                    if let index = strongSelf.images.firstIndex(where: { $0.id == imageId }) {
+                        DispatchQueue.main.async {
+                            strongSelf.images.remove(at: index)
+                        }
+                    }
+                    if strongSelf.images.isEmpty {
+                        strongSelf.statusView = .error("empty View", nil)
+                    } else {
+                        strongSelf.statusView = .gallery
+                    }
+                }
+            })
+            publisher.store(in: &cancellables)
     }
 
     private func existAccessToken(completion: (Result<Bool, AuthenticationError>) -> Void) {

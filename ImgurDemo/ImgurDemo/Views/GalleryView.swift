@@ -46,6 +46,12 @@ struct GalleryView: View {
                                         EmptyView()
                                     }
                                 }
+                                Button(action: {
+                                    viewModel.deleteImage(imageId: imageData.id)
+                                }) {
+                                    Image(systemName: "trash")
+                                        .foregroundColor(.red)
+                                }
                             }
                         }
                     }.padding()
