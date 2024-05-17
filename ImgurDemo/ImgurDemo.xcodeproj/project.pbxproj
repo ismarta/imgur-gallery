@@ -51,6 +51,8 @@
 		3F7CC9872BF22F06000C2C1B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9862BF22F06000C2C1B /* URL+extension.swift */; };
 		3F7CC9892BF23056000C2C1B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9882BF23056000C2C1B /* ErrorView.swift */; };
 		3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */; };
+		3FAE92622BF770640081DD87 /* DeleteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE92612BF770640081DD87 /* DeleteImage.swift */; };
+		3FAE92642BF771660081DD87 /* DeleteResponseRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE92632BF771660081DD87 /* DeleteResponseRemoteEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		3F7CC9862BF22F06000C2C1B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
 		3F7CC9882BF23056000C2C1B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewAssembler.swift; sourceTree = "<group>"; };
+		3FAE92612BF770640081DD87 /* DeleteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImage.swift; sourceTree = "<group>"; };
+		3FAE92632BF771660081DD87 /* DeleteResponseRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteResponseRemoteEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 				3F200F0F2BF35DE4005F0A51 /* ImagesRepository.swift */,
 				3F200F302BF39F99005F0A51 /* GetImages.swift */,
 				3F200F332BF39FC9005F0A51 /* UploadImage.swift */,
+				3FAE92612BF770640081DD87 /* DeleteImage.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				3F200F072BF358E1005F0A51 /* ImageDataRemoteEntity.swift */,
 				3F200F192BF360C1005F0A51 /* MediaEntity.swift */,
 				3F200F1D2BF376E3005F0A51 /* UploadResponseRemoteEntity.swift */,
+				3FAE92632BF771660081DD87 /* DeleteResponseRemoteEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				3F7CC9782BF222FD000C2C1B /* SaveAccessToken.swift in Sources */,
 				3F200F0C2BF3592D005F0A51 /* ImageEntity.swift in Sources */,
 				3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */,
+				3FAE92622BF770640081DD87 /* DeleteImage.swift in Sources */,
 				3F7CC9762BF222F1000C2C1B /* GetAccessToken.swift in Sources */,
 				3F200F162BF35F4E005F0A51 /* ImagesRemoteDataSource.swift in Sources */,
 				3F7CC9822BF22968000C2C1B /* GalleryView.swift in Sources */,
@@ -487,6 +494,7 @@
 				3F7CC96D2BF20DC6000C2C1B /* AccessTokenRepository.swift in Sources */,
 				3F7CC96B2BF20D1E000C2C1B /* AccessTokenDataSource.swift in Sources */,
 				3F7CC97E2BF22943000C2C1B /* LoginView.swift in Sources */,
+				3FAE92642BF771660081DD87 /* DeleteResponseRemoteEntity.swift in Sources */,
 				3F7CC97C2BF22788000C2C1B /* InitialViewViewModel.swift in Sources */,
 				3F200F0A2BF35903005F0A51 /* ImageRemoteEntity.swift in Sources */,
 				3F7CC9692BF20CC9000C2C1B /* AccessTokenDataRepository.swift in Sources */,
@@ -660,6 +668,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ImgurDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = DZML5S448H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImgurDemo/Info.plist;
@@ -668,6 +677,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -689,6 +699,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ImgurDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = DZML5S448H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImgurDemo/Info.plist;
@@ -697,6 +708,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -718,7 +730,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imgur.ImgurDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -737,7 +749,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imgur.ImgurDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

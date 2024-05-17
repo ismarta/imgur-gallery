@@ -11,6 +11,7 @@ import Combine
 enum ImagesApi {
     case getImages(String)
     case uploadImage(MediaEntity)
+    case deleteImage(String, String)
 
     var method: String {
         switch self {
@@ -18,6 +19,8 @@ enum ImagesApi {
             return "GET"
         case .uploadImage:
             return "POST"
+        case .deleteImage:
+            return "DELETE"
         }
     }
 
@@ -26,7 +29,9 @@ enum ImagesApi {
         case .getImages(let userName):
             return "/3/account/\(userName)/images"
         case .uploadImage:
-            return "/3/image/"
+            return "/3/image"
+        case .deleteImage(let imageId, let userName):
+            return "/3/account/\(userName)/image/\(imageId)"
         }
     }
 
@@ -36,6 +41,8 @@ enum ImagesApi {
             return [:]
         case .uploadImage:
             return ["type": "image", "title": "", "description": ""]
+        case .deleteImage:
+            return [:]
         }
     }
 
@@ -45,6 +52,8 @@ enum ImagesApi {
             return []
         case .uploadImage(let media):
             return [media]
+        case .deleteImage:
+            return []
         }
     }
 

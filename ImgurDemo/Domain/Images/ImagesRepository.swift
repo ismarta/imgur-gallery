@@ -11,4 +11,5 @@ import Combine
 protocol ImagesRepository {
     func getImages(accessToken: AccessToken) -> AnyPublisher<[ImageEntity], ServiceError>
     func uploadImageData(accessToken: AccessToken, mediaImage: MediaEntity) -> AnyPublisher<ImageEntity?,ServiceError>
+    func deleteImage(accessToken: AccessToken, imageId: String) -> AnyPublisher<Bool, ServiceError>
 }

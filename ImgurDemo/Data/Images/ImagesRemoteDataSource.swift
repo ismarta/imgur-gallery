@@ -27,4 +27,12 @@ class ImagesRemoteDataSource: ImagesDataSource {
         }
         return transformedPublisher.eraseToAnyPublisher()
     }
+
+    func deleteImage(accessToken: AccessToken, imageId: String) -> AnyPublisher<Bool, ServiceError> {
+        let publisher: AnyPublisher<DeleteResponseRemoteEntity, ServiceError> = ImagesApi.deleteImage(imageId, accessToken.userName).buildRequestPublisher(token: accessToken.token)
+        let transformedPublisher = publisher.map { response in
+            return response.success
+        }
+        return transformedPublisher.eraseToAnyPublisher()
+    }
 }

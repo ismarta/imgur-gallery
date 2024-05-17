@@ -22,4 +22,8 @@ class ImagesDataRepository: ImagesRepository {
     func uploadImageData(accessToken: AccessToken, mediaImage: MediaEntity) -> AnyPublisher<ImageEntity?, ServiceError> {
         remoteDataSource.uploadImageData(accessToken: accessToken, mediaImage: mediaImage)
     }
+
+    func deleteImage(accessToken: AccessToken, imageId: String) -> AnyPublisher<Bool, ServiceError> {
+        remoteDataSource.deleteImage(accessToken: accessToken, imageId: imageId)
+    }
 }
