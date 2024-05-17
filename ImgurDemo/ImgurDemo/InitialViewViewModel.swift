@@ -18,6 +18,7 @@ enum StatusView: Equatable {
 class InitialViewViewModel: ObservableObject {
     @Published var statusView: StatusView
     @Published var images: [ImageEntity] = []
+    @Published var isLoading: Bool
     let getAccessTokenUseCase: GetAccessToken
     let saveAccessTokenUseCase: SaveAccessToken
     let getImagesUseCase: GetImages
@@ -37,6 +38,7 @@ class InitialViewViewModel: ObservableObject {
         self.deleteImageUseCase = deleteImageUseCase
         self.accessToken = accessToken
         self.statusView = .login
+        isLoading = false
         loadView()
     }
 
@@ -86,7 +88,9 @@ class InitialViewViewModel: ObservableObject {
     }
 
     func uploadImage(image: UIImage) {
+        isLoading = true
         guard let accessToken = accessToken else {
+            isLoading = false
             statusView = .error("AuthorizationError", "try again")
             return
         }
@@ -95,9 +99,10 @@ class InitialViewViewModel: ObservableObject {
         }
         let publisher = uploadImageUseCase.execute(accessToken: accessToken, mediaImage: MediaEntity(data: data, forKey: "image"))
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: {[weak self] completion in
             switch completion {
             case .finished:
+                self?.isLoading = false
                 print("uploadImageUseCase::success")
             case .failure(let error):
                 print("uploadImageUseCase::Error: \(error)")
@@ -115,15 +120,18 @@ class InitialViewViewModel: ObservableObject {
     }
 
     func deleteImage(imageId: String) {
+        isLoading = true
         guard let accessToken = accessToken else {
+            isLoading = false
             statusView = .error("AuthorizationError", "try again")
             return
         }
         let publisher = deleteImageUseCase.execute(accessToken: accessToken, imageId: imageId)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: {[weak self] completion in
                 switch completion {
                 case .finished:
+                    self?.isLoading = false
                     print("deleteImageUseCase::success")
                 case .failure(let error):
                     print("deleteImageUseCase::Error: \(error)")
@@ -159,15 +167,18 @@ class InitialViewViewModel: ObservableObject {
     }
 
     private func loadImages() {
+        isLoading = true
         guard let accessToken = accessToken else {
+            isLoading = false
             return loadLogin()
         }
         let publisher = getImagesUseCase.execute(accessToken: accessToken).receive(on: DispatchQueue.main)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
             switch completion {
             case .finished:
                 print("getImagesUseCase::success")
+                self?.isLoading = false
             case .failure(let error):
                 print("getImagesUseCase::Error: \(error)")
             }

@@ -51,6 +51,7 @@
 		3F7CC9872BF22F06000C2C1B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9862BF22F06000C2C1B /* URL+extension.swift */; };
 		3F7CC9892BF23056000C2C1B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC9882BF23056000C2C1B /* ErrorView.swift */; };
 		3F7CC98C2BF23109000C2C1B /* InitialViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */; };
+		3FAD3FEA2BF77DB800BBFF0A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD3FE92BF77DB800BBFF0A /* LoadingView.swift */; };
 		3FAE92622BF770640081DD87 /* DeleteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE92612BF770640081DD87 /* DeleteImage.swift */; };
 		3FAE92642BF771660081DD87 /* DeleteResponseRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE92632BF771660081DD87 /* DeleteResponseRemoteEntity.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		3F7CC9862BF22F06000C2C1B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
 		3F7CC9882BF23056000C2C1B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3F7CC98B2BF23109000C2C1B /* InitialViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewAssembler.swift; sourceTree = "<group>"; };
+		3FAD3FE92BF77DB800BBFF0A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3FAE92612BF770640081DD87 /* DeleteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImage.swift; sourceTree = "<group>"; };
 		3FAE92632BF771660081DD87 /* DeleteResponseRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteResponseRemoteEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,6 +332,7 @@
 				3F7CC97D2BF22943000C2C1B /* LoginView.swift */,
 				3F7CC9812BF22968000C2C1B /* GalleryView.swift */,
 				3F200F362BF3AD2F005F0A51 /* PickerView.swift */,
+				3FAD3FE92BF77DB800BBFF0A /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				3FAE92642BF771660081DD87 /* DeleteResponseRemoteEntity.swift in Sources */,
 				3F7CC97C2BF22788000C2C1B /* InitialViewViewModel.swift in Sources */,
 				3F200F0A2BF35903005F0A51 /* ImageRemoteEntity.swift in Sources */,
+				3FAD3FEA2BF77DB800BBFF0A /* LoadingView.swift in Sources */,
 				3F7CC9692BF20CC9000C2C1B /* AccessTokenDataRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

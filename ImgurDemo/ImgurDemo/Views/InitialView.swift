@@ -11,13 +11,19 @@ import SwiftUI
 struct InitialView: View {
     @ObservedObject var viewModel: InitialViewViewModel
     var body: some View {
-        switch viewModel.statusView {
+        ZStack {
+            switch viewModel.statusView {
             case .gallery:
                 GalleryView(viewModel: viewModel)
             case .login:
                 LoginView(viewModel: viewModel)
             case .error(let textMessage, let textButton):
                 ErrorView(textMessage: textMessage, textButton: textButton, viewModel: viewModel)
+            }
+
+            if viewModel.isLoading {
+               LoadingView()
+            }
         }
     }
 }
